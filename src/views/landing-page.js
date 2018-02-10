@@ -27,7 +27,15 @@ module.exports = function(/*vnode*/) {
             console.log('removing DOM element');
         },
         view: function(/*vnode*/) {
-            return m(navbar);
+
+            return m('root', [
+                m(navbar),
+                m('.grid', [
+                    m('.grid-item'),
+                    m('.grid-item.grid-item--width2'),
+                    m('.grid-item'),
+                ]),
+            ]);
         },
     };
 };
